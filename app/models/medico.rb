@@ -1,0 +1,4 @@
+class Medico < ActiveRecord::Base
+  belongs_to :especialidade
+  attr_accessible :cpf, :crm, :endereco, :nome, :telefone, :especialidade_id
+end
