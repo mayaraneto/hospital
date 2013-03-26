@@ -1,0 +1,62 @@
+# coding: utf-8
+
+require 'spec_helper'
+
+feature 'gerenciar tecnico' do
+
+  scenario 'incluir tecnico' do # , :js => true  do
+
+    equipe = FactoryGirl.create(:equipe, :nome => 'XXX')
+
+    visit new_tecnico_path
+
+    preencher_e_verificar_tecnico
+
+    
+
+  end
+
+  scenario 'alterar tecnico' do #, :js => true  do
+
+    equipe = FactoryGirl.create(:equipe, :nome => 'XXX')
+
+    tecnico = FactoryGirl.create(:tecnico, :equipe => equipe)
+
+    visit edit_tecnico_path(tecnico)
+
+    preencher_e_verificar_tecnico
+
+
+
+  end
+
+   scenario 'excluir tecnico' do #, :js => true  do
+
+    equipe = FactoryGirl.create(:equipe, :nome => 'XXX')
+
+    tecnico = FactoryGirl.create(:tecnico, :equipe => equipe)
+
+    visit tecnicos_path
+
+    click_link 'Excluir'
+    
+
+  end
+
+   def preencher_e_verificar_tecnico
+
+      fill_in 'Nome',  :with => "Arnaldo"
+      fill_in 'Telefone',  :with => "33440055"
+
+      select 'XXX', :on => 'Equipe'
+ 
+
+      click_button 'Salvar'
+
+      page.should have_content 'Nome: Arnaldo'
+      page.should have_content 'Telefone: 33440055'
+      page.should have_content 'Equipe: XXX'
+      
+
+   end
+end
