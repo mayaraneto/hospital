@@ -1,4 +1,7 @@
 Hospital::Application.routes.draw do
+  resources :receitamedicas
+
+
   resources :atendimentos
 
 

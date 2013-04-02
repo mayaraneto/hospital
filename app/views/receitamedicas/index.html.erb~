@@ -1,0 +1,27 @@
+<h1>Listing receitamedicas</h1>
+
+<table>
+  <tr>
+    <th>Nomemedicamento</th>
+    <th>Data</th>
+    <th>Atendimento</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @receitamedicas.each do |receitamedica| %>
+  <tr>
+    <td><%= receitamedica.nomeMedicamento %></td>
+    <td><%= receitamedica.data %></td>
+    <td><%= receitamedica.atendimento.data %></td>
+    <td><%= link_to 'Show', receitamedica %></td>
+    <td><%= link_to 'Edit', edit_receitamedica_path(receitamedica) %></td>
+    <td><%= link_to 'Excluir', receitamedica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Receitamedica', new_receitamedica_path %>

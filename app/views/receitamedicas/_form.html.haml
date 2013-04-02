@@ -1,0 +1,6 @@
+= semantic_form_for [@receitamedica] do |form|
+
+  = form.input :nomeMedicamento, :label => 'NomeMedicamento'
+  = form.input :data, :label => 'Data'
+  = form.input :atendimento, :member_label => :data, :label => 'Atendimento'
+  = form.submit 'Salvar'

@@ -1,0 +1,62 @@
+# coding: utf-8
+
+require 'spec_helper'
+
+feature 'gerenciar receitaMedica' do
+
+  scenario 'incluir receitaMedica' do # , :js => true  do
+
+    atendimento = FactoryGirl.create(:atendimento, :data => '26/06/12')
+
+    visit new_receitaMedica_path
+
+    preencher_e_verificar_receitaMedica
+
+    
+
+  end
+
+  scenario 'alterar receitaMedica' do #, :js => true  do
+
+    atendimento = FactoryGirl.create(:atendimento, :data => '26/06/12')
+
+    receitaMedica = FactoryGirl.create(:receitaMedica, :atendimento => atendimento)
+
+    visit edit_receitaMedica_path(receitaMedica)
+
+    preencher_e_verificar_receitaMedica
+
+
+
+  end
+
+   scenario 'excluir receita_Medica' do #, :js => true  do
+
+    atendimento = FactoryGirl.create(:atendimento, :data => '26/06/12')
+
+    receita_Medica = FactoryGirl.create(:receita_Medica, :atendimento => atendimento)
+
+    visit receita_Medicas_path
+
+    click_link 'Excluir'
+    
+
+  end
+
+   def preencher_e_verificar_receitaMedica
+
+      fill_in 'NomeMedicamento',  :with => "Novalgina"
+      fill_in 'Hora',  :with => "14:00"
+
+      select '26/06/12', :on => 'Atendimento'
+ 
+
+      click_button 'Salvar'
+
+      page.should have_content 'NomeMedicamento: Novalgina'
+      page.should have_content 'Hora: 14:00'
+      page.should have_content 'Atendimento: 26/06/12'
+      
+
+   end
+end

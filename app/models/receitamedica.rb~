@@ -1,0 +1,4 @@
+class Receitamedica < ActiveRecord::Base
+  belongs_to :atendimento
+  attr_accessible :data, :nomeMedicamento, :atendimento_id
+end

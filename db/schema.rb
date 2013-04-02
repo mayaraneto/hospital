@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402133905) do
+ActiveRecord::Schema.define(:version => 20130402141544) do
 
   create_table "atendimentos", :force => true do |t|
     t.string   "data"
@@ -65,5 +65,35 @@ ActiveRecord::Schema.define(:version => 20130402133905) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "receita", :force => true do |t|
+    t.string   "nomeMedicamento"
+    t.string   "data"
+    t.integer  "atendimento_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "receita", ["atendimento_id"], :name => "index_receita_on_atendimento_id"
+
+  create_table "receita_medicas", :force => true do |t|
+    t.string   "nomeMedicamento"
+    t.string   "data"
+    t.integer  "atendimento_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "receita_medicas", ["atendimento_id"], :name => "index_receita_medicas_on_atendimento_id"
+
+  create_table "receitamedicas", :force => true do |t|
+    t.string   "nomeMedicamento"
+    t.string   "data"
+    t.integer  "atendimento_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "receitamedicas", ["atendimento_id"], :name => "index_receitamedicas_on_atendimento_id"
 
 end
