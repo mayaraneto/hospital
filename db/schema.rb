@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326144143) do
+ActiveRecord::Schema.define(:version => 20130402122804) do
 
   create_table "especialidades", :force => true do |t|
     t.string   "tipo"
@@ -31,5 +31,15 @@ ActiveRecord::Schema.define(:version => 20130326144143) do
   end
 
   add_index "medicos", ["especialidade_id"], :name => "index_medicos_on_especialidade_id"
+
+  create_table "pacientes", :force => true do |t|
+    t.string   "nome"
+    t.string   "cpf"
+    t.string   "endereco"
+    t.string   "telefone"
+    t.string   "dataNascimento"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end

@@ -1,0 +1,8 @@
+= semantic_form_for [@paciente] do |form|
+
+  = form.input :nome, :label => 'Nome'
+  = form.input :cpf, :label => 'Cpf'
+  = form.input :endereco, :label => 'Endereco'
+  = form.input :telefone, :label => 'Telefone'
+  = form.input :datanascimento, :label => 'Datanascimento'
+  = form.submit 'Salvar'
