@@ -1,0 +1,29 @@
+<h1>Listing atendimentos</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Hora</th>
+    <th>Medico</th>
+    <th>Paciente</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @atendimentos.each do |atendimento| %>
+  <tr>
+    <td><%= atendimento.data %></td>
+    <td><%= atendimento.hora %></td>
+    <td><%= atendimento.medico %></td>
+    <td><%= atendimento.paciente %></td>
+    <td><%= link_to 'Show', atendimento %></td>
+    <td><%= link_to 'Edit', edit_atendimento_path(atendimento) %></td>
+    <td><%= link_to 'Destroy', atendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Atendimento', new_atendimento_path %>

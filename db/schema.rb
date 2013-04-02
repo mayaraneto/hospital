@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402122804) do
+ActiveRecord::Schema.define(:version => 20130402133905) do
+
+  create_table "atendimentos", :force => true do |t|
+    t.string   "data"
+    t.string   "hora"
+    t.integer  "medico_id"
+    t.integer  "paciente_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "atendimentos", ["medico_id"], :name => "index_atendimentos_on_medico_id"
+  add_index "atendimentos", ["paciente_id"], :name => "index_atendimentos_on_paciente_id"
+
+  create_table "consulta", :force => true do |t|
+    t.string   "data"
+    t.string   "hora"
+    t.integer  "medico_id"
+    t.integer  "paciente_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "consulta", ["medico_id"], :name => "index_consulta_on_medico_id"
+  add_index "consulta", ["paciente_id"], :name => "index_consulta_on_paciente_id"
 
   create_table "especialidades", :force => true do |t|
     t.string   "tipo"
