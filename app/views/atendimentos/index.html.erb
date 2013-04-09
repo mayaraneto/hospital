@@ -1,10 +1,13 @@
-<h1>Listing atendimentos</h1>
+<h1>Cadastro de Atendimentos</h1>
 
 <table>
   <tr>
     <th>Data</th>
+    <th width=50></th>
     <th>Hora</th>
+    <th width=50></th>
     <th>Medico</th>
+    <th width=50></th>
     <th>Paciente</th>
     <th></th>
     <th></th>
@@ -14,8 +17,11 @@
 <% @atendimentos.each do |atendimento| %>
   <tr>
     <td><%= atendimento.data %></td>
+    <td></td>
     <td><%= atendimento.hora %></td>
+    <td></td>
     <td><%= atendimento.medico.nome %></td>
+    <td></td>
     <td><%= atendimento.paciente.nome %></td>
     <td><%= link_to 'Show', atendimento %></td>
     <td><%= link_to 'Edit', edit_atendimento_path(atendimento) %></td>

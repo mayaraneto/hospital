@@ -1,23 +1,28 @@
-<h1>Listing pacientes</h1>
+<h1>Cadastro de Pacientes</h1>
 
 <table>
   <tr>
     <th>Nome</th>
+    <th width=50></th>
     <th>Cpf</th>
+    <th width=50></th>
     <th>Endereço</th>
+    <th width=50></th>
     <th>Telefone</th>
+    <th width=50></th>
     <th>Data Nascimento</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @pacientes.each do |paciente| %>
   <tr>
     <td><%= paciente.nome %></td>
+    <td></td>
     <td><%= paciente.cpf %></td>
+    <td></td>
     <td><%= paciente.endereco %></td>
+    <td></td>    
     <td><%= paciente.telefone %></td>
+    <td></td>
     <td><%= paciente.dataNascimento %></td>
     <td><%= link_to 'Show', paciente %></td>
     <td><%= link_to 'Edit', edit_paciente_path(paciente) %></td>

@@ -1,9 +1,11 @@
-<h1>Listing receitamedicas</h1>
+<h1>Cadastro da Receita Médica</h1>
 
 <table>
   <tr>
     <th>Nome Medicamento</th>
+    <th width=50></th>
     <th>Data</th>
+    <th width=50></th>
     <th>Atendimento</th>
     <th></th>
     <th></th>
@@ -13,7 +15,9 @@
 <% @receitamedicas.each do |receitamedica| %>
   <tr>
     <td><%= receitamedica.nomeMedicamento %></td>
+    <td></td>
     <td><%= receitamedica.data %></td>
+    <td></td>
     <td><%= receitamedica.atendimento.data %></td>
     <td><%= link_to 'Show', receitamedica %></td>
     <td><%= link_to 'Edit', edit_receitamedica_path(receitamedica) %></td>

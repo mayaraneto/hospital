@@ -33,7 +33,7 @@ Released   : 20120807
 	<!-- end #menu -->
 	<div id="header">
 		<div id="logo">
-			<h1><a href="/">Sistema Hospitalar</a>&nbsp;&nbsp;&nbsp;<span></span></h1>
+			<h1><b href="/">Sistema Hospitalar</b>&nbsp;&nbsp;&nbsp;<span></span></h1>
 		</div>
 	</div>
 	<!-- end #header -->

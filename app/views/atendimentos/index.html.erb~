@@ -1,4 +1,4 @@
-<h1>Listing atendimentos</h1>
+<h1>Atendimentos</h1>
 
 <table>
   <tr>
@@ -15,11 +15,11 @@
   <tr>
     <td><%= atendimento.data %></td>
     <td><%= atendimento.hora %></td>
-    <td><%= atendimento.medico %></td>
-    <td><%= atendimento.paciente %></td>
+    <td><%= atendimento.medico.nome %></td>
+    <td><%= atendimento.paciente.nome %></td>
     <td><%= link_to 'Show', atendimento %></td>
     <td><%= link_to 'Edit', edit_atendimento_path(atendimento) %></td>
-    <td><%= link_to 'Destroy', atendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Excluir', atendimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
